@@ -104,12 +104,12 @@ category = st.selectbox("🔍 Select service category:", categories)
 
 # Location input section
 location_mode = st.radio("📍 Choose location input method:",
-                        ["Pincode", "Area Name", "Use Interactive Map"])
+                        ["Area Name", "Use Interactive Map"])
 
 location_input = ""
-if location_mode == "Pincode":
-    location_input = st.text_input("📮 Enter 6-digit pincode:", placeholder="e.g., 560001")
-elif location_mode == "Area Name":
+# if location_mode == "Pincode":
+#     location_input = st.text_input("📮 Enter 6-digit pincode:", placeholder="e.g., 560001")
+if location_mode == "Area Name":
     location_input = st.text_input("🏙️ Enter area name:", placeholder="e.g., Koramangala, Bangalore")
 else:
     st.markdown('<div class="map-container">', unsafe_allow_html=True)
@@ -173,17 +173,17 @@ user_preferences = st.text_area("💡 Any special requirements?",
 # Main search handler
 if st.button("🚀 Find Best Options"):
     # Validate inputs
-    if location_mode == "Pincode" and (not location_input.isdigit() or len(location_input) != 6):
-        st.error("❌ Please enter a valid 6-digit pincode")
-        st.stop()
+    # if location_mode == "Pincode" and (not location_input.isdigit() or len(location_input) != 6):
+    #     st.error("❌ Please enter a valid 6-digit pincode")
+    #     st.stop()
     if location_mode == "Use Interactive Map" and not st.session_state.selected_coords:
         st.error("❌ Please select a location on the map")
         st.stop()
     
     # Build search query
-    if location_mode == "Pincode":
-        search_location = f"{location_input} India"
-    elif location_mode == "Use Interactive Map":
+    # if location_mode == "Pincode":
+    #     search_location = f"{location_input} India"
+    if location_mode == "Use Interactive Map":
         search_location = f"{st.session_state.selected_coords[0]}, {st.session_state.selected_coords[1]}"
     else:
         search_location = f"{location_input} India"
