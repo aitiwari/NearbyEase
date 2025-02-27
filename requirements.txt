@@ -1,0 +1,10 @@
+streamlit
+groq
+duckduckgo-search
+folium
+streamlit-folium
+geopy
+requests
+beautifulsoup4
+python-dotenv
+pydantic-settings
