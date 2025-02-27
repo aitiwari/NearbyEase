@@ -93,7 +93,7 @@ st.markdown("Find the best nearby services with AI-powered recommendations")
 
 # Sidebar for API key input
 with st.sidebar:
-    user_groq_key = st.text_input("Enter Groq API Key:", type="password")
+    user_groq_key = st.text_input("Enter Groq API Key (optional):", type="password")
     if user_groq_key.strip():
         os.environ["GROQ_API_KEY"] = user_groq_key.strip()
 
