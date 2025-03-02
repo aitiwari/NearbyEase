@@ -1,3 +1,15 @@
+---
+title: NearbyEase
+emoji: 🏆
+colorFrom: pink
+colorTo: green
+sdk: streamlit
+sdk_version: 1.42.2
+app_file: app.py
+pinned: false
+license: apache-2.0
+---
+
 # NearbyEase - AI-Powered Nearby Services Finder 📍
 
 **NearbyEase** is a Streamlit-based web application that helps you find the best nearby services using AI-powered recommendations. Whether you're looking for a restaurant, hospital, pharmacy, or any other service, NearbyEase provides intelligent suggestions based on your location and preferences.
